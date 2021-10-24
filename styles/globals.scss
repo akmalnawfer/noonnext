@@ -1,0 +1,168 @@
+$main-color: #0fcdaa;
+$body-bg: #f0f2f5;
+$card-bg: #fff;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: $body-bg;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  background: $main-color;
+  padding: 10px 0;
+  @media only screen and (max-width: 767px) {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 9999;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    li {
+      margin: 0 5px;
+      a {
+        color: #fff;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+.post-card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: $card-bg;
+  margin-top: 25px;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  &:last-child{
+    margin-bottom: 25px;
+  }
+  @media only screen and (max-width: 767px) {
+    &:last-child{
+      margin-bottom: 75px;
+    }
+  }
+  .user-wrapper {
+    padding: 15px;
+    .user-image {
+      width: 50px;
+      height: 50px;
+      margin-right: 8px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+    .username {
+      font-size: 16px;
+      color: $main-color;
+    }
+  }
+
+  .image-container {
+    position: relative;
+    .post-image {
+      width: 100%;
+      min-height: 400px;
+      object-fit: cover;
+    }
+    .post-meta {
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      .post-description {
+        color: #fff;
+        p {
+          margin: 0;
+          &.post-price {
+            font-weight: 600;
+          }
+        }
+      }
+      .post-like {
+        background: none;
+        border: none;
+        font-size: 25px;
+        transition: 0.3s ease-in-out;
+        svg {
+          transition: 0.3s ease-in-out;
+          color: #fff;
+        }
+        &.favorite {
+          svg {
+            transition: 0.3s ease-in-out;
+            color: $main-color;
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+  .post-stats {
+    padding: 10px 15px;
+    .post-likes {
+      color: $main-color;
+      font-weight: bold;
+    }
+    .post-caption {
+      margin-top: 5px;
+      color: #6e6e6e;
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .post-hashtags {
+      color: $main-color;
+      span {
+        margin-right: 5px;
+        cursor: pointer;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .actions {
+      button {
+        color: #000;
+        background: none;
+        border: none;
+        padding: 0;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    }
+  }
+}
