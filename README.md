@@ -19,8 +19,3 @@ npm run build
 ```bash
 npm start
 ```
-
-### API Routes:
-
-GET /api/articles
-GET /api/articles/:id
